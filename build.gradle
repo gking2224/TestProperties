@@ -19,6 +19,7 @@ task testProps << {
     println System.getProperty("gradlePropertiesSystemProp")
     println myGradleProperty
     println systemProjectProp
+    println project["systemProp.teamCitySystemProp"]
     println System.getProperty("teamCitySystemProp")
 }
 task wrapper(type: Wrapper) {
