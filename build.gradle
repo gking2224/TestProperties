@@ -16,7 +16,7 @@ dependencies {
 }
 
 task testProps << {
-    println System.getProperty("systemProp.gradlePropertiesSystemProp")
+    println System.getProperty("gradlePropertiesSystemProp")
     println myGradleProperty
     println systemProjectProp
 }
