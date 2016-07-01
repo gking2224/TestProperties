@@ -7,6 +7,8 @@ buildscript {
 plugins {
   id 'groovy'
 }
+// include test configuration
+if (file('test.gradle').exists()) apply from: 'test.gradle'
 
 apply plugin: 'eclipse'
 apply plugin: 'maven'
@@ -19,9 +21,11 @@ task testProps << {
     println System.getProperty("gradlePropertiesSystemProp")
     println myGradleProperty
     println systemProjectProp
-    println project["systemProp.teamCitySystemProp"]
-    println System.getProperty("teamCitySystemProp")
+    println config.environment
+    println System.getProperty("mySystemProp")
 }
+
+
 task wrapper(type: Wrapper) {
     gradleVersion = '2.7'
 }
